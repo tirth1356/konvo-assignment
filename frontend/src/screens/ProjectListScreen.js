@@ -397,10 +397,8 @@ export default function ProjectListScreen({ navigation }) {
         }
         ListFooterComponent={
           <View style={s.footer}>
-            <Text style={s.footerText}>Open source · {' '}
-              <Text style={s.footerLink} onPress={() => Linking.openURL('https://github.com/tirth1356/konvo-assignment')}>
-                GitHub ↗
-              </Text>
+            <Text style={s.footerLink} onPress={() => Linking.openURL('https://github.com/tirth1356/konvo-assignment')}>
+              GitHub ↗
             </Text>
           </View>
         }
