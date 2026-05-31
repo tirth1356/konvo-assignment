@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   StyleSheet, Text, View, TextInput,
-  TouchableOpacity, ActivityIndicator, Animated
+  TouchableOpacity, ActivityIndicator, Animated, Linking
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
@@ -245,6 +245,19 @@ export default function LoginScreen() {
       backgroundColor: theme.border,
       marginVertical: 24,
     },
+    footer: {
+      marginTop: 24,
+      alignItems: 'center',
+    },
+    footerText: {
+      fontSize: 12,
+      color: theme.textSecondary,
+    },
+    footerLink: {
+      fontSize: 12,
+      color: theme.primary,
+      fontWeight: '700',
+    },
   });
 
   return (
@@ -359,6 +372,14 @@ export default function LoginScreen() {
             <Text style={s.devCode}>DEV OTP: <Text style={{ fontWeight: '800', fontSize: 16 }}>{devOtp}</Text></Text>
           </View>
         )}
+
+        <View style={s.footer}>
+          <Text style={s.footerText}>Open source · {' '}
+            <Text style={s.footerLink} onPress={() => Linking.openURL('https://github.com/tirth1356/konvo-assignment')}>
+              GitHub ↗
+            </Text>
+          </Text>
+        </View>
       </Animated.View>
     </View>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   StyleSheet, Text, View, FlatList, TouchableOpacity,
-  Modal, TextInput, ActivityIndicator, Animated
+  Modal, TextInput, ActivityIndicator, Animated, Linking
 } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { Feather } from '@expo/vector-icons';
@@ -193,6 +193,12 @@ export default function ProjectListScreen({ navigation }) {
     emptyIcon: { marginBottom: 16, opacity: 0.4 },
     emptyTitle: { fontSize: 18, fontWeight: '700', color: theme.text, marginBottom: 8 },
     emptyDesc: { fontSize: 14, color: theme.textSecondary, textAlign: 'center', lineHeight: 20 },
+    footer: {
+      alignItems: 'center',
+      paddingVertical: 24,
+    },
+    footerText: { fontSize: 12, color: theme.textSecondary },
+    footerLink: { fontSize: 12, color: theme.primary, fontWeight: '700' },
     overlay: {
       flex: 1,
       backgroundColor: 'rgba(0,0,0,0.6)',
@@ -388,6 +394,15 @@ export default function ProjectListScreen({ navigation }) {
               <Text style={s.emptyDesc}>Create your first project to start organizing tasks.</Text>
             </View>
           )
+        }
+        ListFooterComponent={
+          <View style={s.footer}>
+            <Text style={s.footerText}>Open source · {' '}
+              <Text style={s.footerLink} onPress={() => Linking.openURL('https://github.com/tirth1356/konvo-assignment')}>
+                GitHub ↗
+              </Text>
+            </Text>
+          </View>
         }
       />
 
