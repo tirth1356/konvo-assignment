@@ -1,6 +1,6 @@
 # 🚀 Project & Task Manager
 
-🔗 **Live Demo:**[ Click here](https://konvo-assignment.vercel.app/)
+🔗 **Live Demo:**[ https://konvo-assignment.vercel.app](https://konvo-assignment.vercel.app/)
 
 A modern, full-stack **Project & Task Management Application** designed to help teams and individuals organize projects, manage tasks, and track project progress efficiently.
 
