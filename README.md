@@ -1,79 +1,224 @@
-# Project & Task Manager Application
+# 🚀 Project & Task Manager
 
-A modern project and task management application. Built with a React Native (Expo) web-ready frontend, Node.js/Express backend, and Neon PostgreSQL database.
+🔗 **Live Demo:** https://your-demo-url.vercel.app
 
-## Tech Stack
-* **Frontend**: React Native (Expo Web), Redux Toolkit, Axios, React Navigation
-* **Backend**: Node.js, Express, Nodemailer, JSON Web Tokens (JWT)
-* **Database**: PostgreSQL (Neon Postgres)
+A modern, full-stack **Project & Task Management Application** designed to help teams and individuals organize projects, manage tasks, and track project progress efficiently.
 
----
-
-## Getting Started
-
-### 1. Database Setup
-1. Create a free account and a new PostgreSQL project at [neon.tech](https://neon.tech).
-2. Copy the connection string.
-
-### 2. Backend Setup
-1. Navigate to the `backend` folder:
-   ```bash
-   cd backend
-   ```
-2. Create a `.env` file from the example:
-   ```bash
-   cp .env.example .env
-   ```
-3. Set your environment variables in `.env`:
-   * `DATABASE_URL`: Your Neon Postgres connection string.
-   * `JWT_SECRET`: A secure key for token encryption.
-   * `PORT`: Default is `5000`.
-   * *SMTP Variables (Optional)*: Set your email credentials (e.g., Gmail + App Passwords) to send real OTP emails. If left empty, OTPs will print to the console.
-4. Run migrations to initialize tables:
-   ```bash
-   npm run migrate
-   ```
-5. Start the server:
-   * **Development**: `npm run dev`
-   * **Production**: `npm start`
-
-### 3. Frontend Setup
-1. Navigate to the `frontend` folder:
-   ```bash
-   cd frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Create a `.env` file:
-   ```env
-   EXPO_PUBLIC_API_URL=http://localhost:5000/api
-   ```
-4. Start the frontend:
-   ```bash
-   npm run web
-   ```
+Built with **React Native (Expo Web)**, **Node.js/Express**, and **Neon PostgreSQL**.
 
 ---
 
-## Deployment Instructions
+## ✨ Features
 
-### Backend (Render)
-1. Push the code to a GitHub repository.
-2. In [Render](https://render.com), create a new **Web Service** and link your repo.
-3. Configure the Root Directory to `backend`.
-4. Build Command: `npm install`
-5. Start Command: `npm start`
-6. Add Environment Variables from your `.env` (like `DATABASE_URL` and `JWT_SECRET`).
-7. Once deployed, note down the backend live URL.
+* 🔐 JWT Authentication
+* 📧 OTP-Based Email Verification
+* 👤 User Registration & Login
+* 📁 Project Creation & Management
+* ✅ Task Creation and Tracking
+* 📊 Progress Monitoring
+* 🔄 Redux Toolkit State Management
+* 🌐 Responsive Web Interface
 
-### Frontend (Vercel)
-1. Create a new project in [Vercel](https://vercel.com) linking the same repo.
-2. Configure the Root Directory to `frontend`.
-3. Framework Preset: **Other** or **Create React App**.
-4. Build Command: `npm run build` (runs `expo export --platform web`).
-5. Output Directory: `dist`.
-6. Add Environment Variables:
-   * `EXPO_PUBLIC_API_URL`: Set to your Render backend URL (e.g., `https://your-backend.onrender.com/api`).
-7. Deploy.
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React Native (Expo Web)
+* Redux Toolkit
+* React Navigation
+* Axios
+
+### Backend
+
+* Node.js
+* Express.js
+* JWT
+* Nodemailer
+
+### Database
+
+* PostgreSQL
+* Neon Database
+
+---
+
+## 📂 Project Structure
+
+```text
+project-root/
+│
+├── frontend/          # React Native (Expo Web)
+│
+├── backend/           # Express API Server
+│
+└── README.md
+```
+
+---
+
+## 🔑 Environment Variables
+
+### Backend
+
+Create a `.env` file inside the `backend` directory:
+
+```env
+DATABASE_URL=your_neon_database_url
+JWT_SECRET=your_secure_secret_key
+PORT=5000
+
+# Optional SMTP Configuration
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+```
+
+### Frontend
+
+Create a `.env` file inside the `frontend` directory:
+
+```env
+EXPO_PUBLIC_API_URL=http://localhost:5000/api
+```
+
+---
+
+## 📡 API Endpoints
+
+### Authentication
+
+| Method | Endpoint               | Description              |
+| ------ | ---------------------- | ------------------------ |
+| POST   | `/api/auth/register`   | Register a new user      |
+| POST   | `/api/auth/send-otp`   | Send OTP to email        |
+| POST   | `/api/auth/verify-otp` | Verify OTP               |
+| POST   | `/api/auth/login`      | Login user               |
+| GET    | `/api/auth/profile`    | Get current user profile |
+
+---
+
+### Projects
+
+| Method | Endpoint            | Description         |
+| ------ | ------------------- | ------------------- |
+| GET    | `/api/projects`     | Get all projects    |
+| POST   | `/api/projects`     | Create a project    |
+| GET    | `/api/projects/:id` | Get project details |
+| PUT    | `/api/projects/:id` | Update project      |
+| DELETE | `/api/projects/:id` | Delete project      |
+
+---
+
+### Tasks
+
+| Method | Endpoint         | Description      |
+| ------ | ---------------- | ---------------- |
+| GET    | `/api/tasks`     | Get all tasks    |
+| POST   | `/api/tasks`     | Create task      |
+| GET    | `/api/tasks/:id` | Get task details |
+| PUT    | `/api/tasks/:id` | Update task      |
+| DELETE | `/api/tasks/:id` | Delete task      |
+
+---
+
+## 🚀 Local Setup
+
+### 1. Clone Repository
+
+```bash
+git clone https://github.com/tirth1356/konvo-assignment.git
+cd konvo-assignment
+```
+
+---
+
+### 2. Database Setup
+
+Create a PostgreSQL database on:
+
+https://neon.tech
+
+Copy the database connection string.
+
+---
+
+### 3. Backend Setup
+
+Navigate to the backend folder:
+
+```bash
+cd backend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create environment file:
+
+```bash
+cp .env.example .env
+```
+
+Run migrations:
+
+```bash
+npm run migrate
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Production:
+
+```bash
+npm start
+```
+
+Backend URL:
+
+```text
+http://localhost:5000
+```
+
+---
+
+### 4. Frontend Setup
+
+Navigate to frontend:
+
+```bash
+cd frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start Expo Web:
+
+```bash
+npm run web
+```
+
+Frontend URL:
+
+```text
+http://localhost:8081
+```
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
