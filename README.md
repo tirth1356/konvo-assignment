@@ -5,9 +5,7 @@
 A modern, full-stack **Project & Task Management Application** designed to help teams and individuals organize projects, manage tasks, and track project progress efficiently.
 
 Built with **React Native (Expo Web)**, **Node.js/Express**, and **Neon PostgreSQL**.
-
 ---
-
 ## ✨ Features
 
 * 🔐 JWT Authentication
@@ -18,18 +16,15 @@ Built with **React Native (Expo Web)**, **Node.js/Express**, and **Neon PostgreS
 * 📊 Progress Monitoring
 * 🔄 Redux Toolkit State Management
 * 🌐 Responsive Web Interface
-
 ---
 
 ## 🛠️ Tech Stack
-
 ### Frontend
 
 * React Native (Expo Web)
 * Redux Toolkit
 * React Navigation
 * Axios
-
 ### Backend
 
 * Node.js
